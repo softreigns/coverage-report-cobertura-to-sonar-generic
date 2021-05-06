@@ -17,3 +17,8 @@ sonar.cfamily.threads=12
 sonar.c.file.suffixes=-
 sonar.cpp.file.suffixes=-
 sonar.coverageReportPaths=sonar-reports/sonar-code-coverage.xml
+
+
+# alternative to xccov-to-sonarqube-generic.sh script and resolves the issue and slowness with warnings
+
+Requested but did not find extension point with identifier Xcode.IDEFoundation.IDEResultKitSerializationConverter
