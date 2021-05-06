@@ -23,7 +23,7 @@
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:choose>
-											<xsl:when test = "contains(@condition-coverage, '0% (0/')">
+											<xsl:when test = "starts-with(@condition-coverage, '0%')">
 												<xsl:attribute name="covered">false</xsl:attribute>
 											</xsl:when>
 											<xsl:otherwise>
