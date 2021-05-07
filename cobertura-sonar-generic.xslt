@@ -1,4 +1,9 @@
 ﻿<?xml version="1.0"?>
+<!--
+    Author: Komal Singh
+    Desc: Converts cobertura.xml to sonar generic report format.
+	Note: Treats a hit to a line, or a greater than zero % as covered line
+-->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:output method="xml" indent="yes"/>
 	<xsl:template match="/">
@@ -23,7 +28,7 @@
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:choose>
-											<xsl:when test = "contains(@condition-coverage, '0% (0/')">
+											<xsl:when test = "starts-with(@condition-coverage, '0%')">
 												<xsl:attribute name="covered">false</xsl:attribute>
 											</xsl:when>
 											<xsl:otherwise>
